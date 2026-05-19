@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>이예나 | 이력서</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f2f4f7;
+    color:#222;
+    font-family:"Pretendard","Noto Sans KR","Malgun Gothic",Arial,sans-serif;
+    line-height:1.75;
+    padding:40px 20px;
+}
+
+.resume-wrapper{
+    max-width:880px;
+    margin:0 auto;
+    background:#fff;
+    padding:48px 54px 60px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.06);
+    border-radius:20px;
+}
+
+.header-contact{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    row-gap:8px;
+    column-gap:24px;
+    padding-bottom:28px;
+    border-bottom:1px solid #e4e7ec;
+}
+
+.contact-label{
+    font-size:12px;
+    color:#8b95a1;
+    font-weight:600;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+}
+
+.contact-value{
+    font-size:15px;
+    color:#222;
+    font-weight:500;
+}
+
+.main-content{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:56px;
+    margin-top:44px;
+}
+
+.resume-header{
+    margin-bottom:36px;
+}
+
+.resume-title{
+    font-size:4rem;
+    font-weight:800;
+    letter-spacing:-0.06em;
+    line-height:1;
+    color:#111;
+    margin-bottom:14px;
+}
+
+.profession{
+    font-size:15px;
+    font-weight:600;
+    color:#6b7280;
+    margin-bottom:8px;
+}
+
+.name-subtitle{
+    font-size:22px;
+    font-weight:700;
+    color:#111;
+}
+
+.summary{
+    font-size:15px;
+    color:#444;
+    margin-top:26px;
+}
+
+.section{
+    margin-top:42px;
+}
+
+.section-title{
+    font-size:16px;
+    font-weight:800;
+    color:#111;
+    margin-bottom:22px;
+    padding-bottom:8px;
+    border-bottom:1px solid #d8dde5;
+}
+
+.job-item,
+.education-item{
+    margin-bottom:30px;
+}
+
+.item-header{
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    margin-bottom:6px;
+}
+
+.item-title{
+    font-size:16px;
+    font-weight:700;
+    color:#111;
+}
+
+.item-date{
+    font-size:13px;
+    color:#8a94a6;
+    white-space:nowrap;
+}
+
+.item-subtitle{
+    font-size:14px;
+    color:#6b7280;
+    font-style:italic;
+    margin-bottom:10px;
+}
+
+.item-description{
+    font-size:14px;
+    color:#444;
+}
+
+.item-description ul{
+    padding-left:18px;
+}
+
+.item-description li{
+    margin-bottom:8px;
+}
+
+.photo-container{
+    width:220px;
+    height:280px;
+    overflow:hidden;
+    border-radius:14px;
+    margin-left:auto;
+    margin-bottom:36px;
+    background:#e5e7eb;
+}
+
+.photo-container img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.skills-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.skill-tag{
+    padding:9px 14px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.skill-dark{
+    background:#111827;
+    color:#fff;
+}
+
+.skill-light{
+    background:#eef2f7;
+    color:#374151;
+}
+
+.language-item{
+    margin-bottom:18px;
+}
+
+.language-top{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:8px;
+}
+
+.language-name{
+    font-size:14px;
+    font-weight:600;
+    color:#222;
+}
+
+.language-level{
+    font-size:13px;
+    color:#6b7280;
+}
+
+.dots{
+    display:flex;
+    gap:6px;
+}
+
+.dot{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    border:1px solid #b6bec8;
+}
+
+.filled{
+    background:#111827;
+    border-color:#111827;
+}
+
+.empty{
+    background:transparent;
+}
+
+.link-list{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.link-item{
+    font-size:14px;
+    color:#4b5563;
+    word-break:break-all;
+}
+
+.metrics-box{
+    background:#f8fafc;
+    border:1px solid #e5e7eb;
+    border-radius:14px;
+    padding:18px;
+    margin-top:26px;
+}
+
+.metrics-box ul{
+    padding-left:18px;
+}
+
+.metrics-box li{
+    font-size:13px;
+    color:#4b5563;
+    margin-bottom:8px;
+}
+
+.footer{
+    margin-top:70px;
+    text-align:center;
+    padding-top:36px;
+    border-top:1px solid #e5e7eb;
+}
+
+.footer-name{
+    font-size:4.2rem;
+    font-weight:800;
+    letter-spacing:-0.08em;
+    color:#111;
+    line-height:1;
+}
+
+.footer-sub{
+    margin-top:12px;
+    color:#7b8794;
+    font-size:14px;
+}
+
+@media (max-width:900px){
+
+    .resume-wrapper{
+        padding:36px 28px 48px;
+    }
+
+    .main-content{
+        grid-template-columns:1fr;
+    }
+
+    .header-contact{
+        grid-template-columns:1fr;
+    }
+
+    .photo-container{
+        margin:0 auto 36px;
+    }
+
+    .resume-title{
+        font-size:3rem;
+    }
+
+    .footer-name{
+        font-size:3rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="resume-wrapper">
+
+    <div class="header-contact">
+        <div class="contact-label">Portfolio / Branding</div>
+        <div class="contact-label">Phone</div>
+        <div class="contact-label">E-mail</div>
+
+        <div class="contact-value">Data Meets Creative</div>
+        <div class="contact-value">010-1234-5678</div>
+        <div class="contact-value">yena.lee@email.com</div>
+    </div>
+
+    <div class="main-content">
+
+        <div class="left-column">
+
+            <div class="resume-header">
+                <div class="resume-title">이력서</div>
+                <div class="profession">데이터 기반 콘텐츠 기획 · 서비스 운영 · 프로젝트 관리</div>
+                <div class="name-subtitle">이예나 | Yena Lee</div>
+
+                <div class="summary">
+                    “데이터로 사용자 니즈를 분석하고, 실제 유저의 반응을 성과로 증명합니다.”
+                    기획부터 실행, 데이터 검증까지 전 과정을 주도적으로 수행해온 실무형 기획자입니다.
+                    한국개발연구원(KDI)에서 신규 사업 웹사이트 기획 및 콘텐츠 운영을 담당하며 오픈 3주 만에 방문자 700명 이상을 확보했고,
+                    개인 콘텐츠 채널 운영을 통해 6개월 만에 월 방문자 수를 약 8.5배 성장시킨 경험이 있습니다.
+                    ADsP 기반 데이터 분석 역량과 시각 콘텐츠 제작 경험을 바탕으로 복잡한 정보를 사용자 친화적인 콘텐츠와 서비스 형태로 구조화하고 있습니다.
+                </div>
+
+                <div class="metrics-box">
+                    <ul>
+                        <li>공공기관 신규 사업 웹사이트 오픈 3주 만에 방문자 700명 및 조회수 900회 이상 확보</li>
+                        <li>블로그 운영 6개월 만에 월 방문자 수 735명 → 6,197명 증가</li>
+                        <li>유튜브·링크드인 FX 포트폴리오 누적 조회수 30,000회 이상 기록</li>
+                        <li>렌더 자동화 프로세스 구축으로 작업 시간 약 70% 절감</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">경력</div>
+
+                <div class="job-item">
+                    <div class="item-header">
+                        <div class="item-title">한국개발연구원(KDI) 국제개발협력센터</div>
+                        <div class="item-date">2022.04 ~ 2024.07</div>
+                    </div>
+
+                    <div class="item-subtitle">연구원</div>
+
+                    <div class="item-description">
+                        <ul>
+                            <li>신규 사업 웹사이트 콘텐츠 구성, 디자인 시스템, 레이아웃 및 홍보물 제작 전반 담당</li>
+                            <li>사이트 오픈 3주 만에 방문자 700명 이상 및 조회수 900회 이상 확보</li>
+                            <li>직접 제작한 디자인 프레임이 타 부서 홍보물 제작 시 표준 레퍼런스로 활용</li>
+                            <li>헝가리·멕시코·도미니카공화국 협력국 관계자 대상 정책자문사업 수요 조사 및 프로젝트 운영 수행</li>
+                            <li>엑셀·워드 기반 반복 행정업무 자동화 파일 제작 및 팀 배포</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="job-item">
+                    <div class="item-header">
+                        <div class="item-title">M83 VFX STUDIO</div>
+                        <div class="item-date">2026.01 ~ 2026.04</div>
+                    </div>
+
+                    <div class="item-subtitle">FX Artist</div>
+
+                    <div class="item-description">
+                        <ul>
+                            <li>극장판 애니메이션, 영화, 넷플릭스 드라마 등 상업 콘텐츠 FX 작업 수행</li>
+                            <li>Houdini 및 Python 기반 반복 렌더 세팅 자동화 구현</li>
+                            <li>VEX 코드를 활용하여 장당 20분 소요되던 렌더 연산 시간을 약 6분 수준으로 단축</li>
+                            <li>포트폴리오 콘텐츠를 유튜브·링크드인 플랫폼에 배포하여 누적 조회수 30,000회 이상 확보</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="job-item">
+                    <div class="item-header">
+                        <div class="item-title">글로벌 프로젝트 및 인턴십 경험</div>
+                    </div>
+
+                    <div class="item-description">
+                        <ul>
+                            <li>러시아 외교아카데미 현대국제문제연구소: 텍스트 데이터 분석 및 국제 학술대회 소논문 발표</li>
+                            <li>UNPOG: 국제 청년포럼 운영 지원 및 다국어 보고서 레이아웃 디자인 담당</li>
+                            <li>ICAPP 사무국: 공식 웹사이트 유지 관리 및 영문 발표자료 기획·제작</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="section">
+                <div class="section-title">외국어</div>
+
+                <div class="language-item">
+                    <div class="language-top">
+                        <div class="language-name">영어</div>
+                        <div class="language-level">TOEIC 990</div>
+                    </div>
+
+                    <div class="dots">
+                        <div class="dot filled"></div>
+                        <div class="dot filled"></div>
+                        <div class="dot filled"></div>
+                        <div class="dot filled"></div>
+                        <div class="dot filled"></div>
+                    </div>
+                </div>
+
+                <div class="language-item">
+                    <div class="language-top">
+                        <div class="language-name">러시아어</div>
+                        <div class="language-level">TORFL Level 3 (C2)</div>
+                    </div>
+
+                    <div class="dots">
+                        <div class="dot filled"></div>
+                        <div class="dot filled"></div>
+                        <div class="dot filled"></div>
+                        <div class="dot filled"></div>
+                        <div class="dot filled"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="right-column">
+
+            <div class="photo-container">
+                <img src="me.jpg" alt="이예나 프로필 사진">
+            </div>
+
+            <div class="section">
+                <div class="section-title">학력</div>
+
+                <div class="education-item">
+                    <div class="item-header">
+                        <div class="item-title">한양대학교 국제학대학원</div>
+                        <div class="item-date">2019.03 ~ 2021.08</div>
+                    </div>
+
+                    <div class="item-subtitle">러시아학과 석사 | GPA 4.33 / 4.5</div>
+
+                    <div class="item-description">
+                        텍스트 마이닝 기반 러시아 디지털 공공외교 수용자 인식 연구 논문 작성 및 원내 박사과정 대상 데이터 분석 강의 진행
+                    </div>
+                </div>
+
+                <div class="education-item">
+                    <div class="item-header">
+                        <div class="item-title">연세대학교</div>
+                        <div class="item-date">2015.03 ~ 2019.02</div>
+                    </div>
+
+                    <div class="item-subtitle">노어노문학과 학사 | GPA 3.93 / 4.3</div>
+
+                    <div class="item-description">
+                        러시아 상트페테르부르크 국립대학교 교환학생 이수 (2017.08 ~ 2018.06)
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="section">
+                <div class="section-title">핵심 역량</div>
+
+                <div class="skills-container">
+                    <div class="skill-tag skill-dark">서비스 기획</div>
+                    <div class="skill-tag skill-light">콘텐츠 운영</div>
+                    <div class="skill-tag skill-dark">데이터 분석</div>
+                    <div class="skill-tag skill-light">프로젝트 관리</div>
+                    <div class="skill-tag skill-dark">Houdini</div>
+                    <div class="skill-tag skill-light">Python</div>
+                    <div class="skill-tag skill-dark">SPSS</div>
+                    <div class="skill-tag skill-light">UX Writing</div>
+                    <div class="skill-tag skill-dark">웹사이트 기획</div>
+                    <div class="skill-tag skill-light">시각 콘텐츠 제작</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">자격증 및 링크</div>
+
+                <div class="link-list">
+                    <div class="link-item">데이터분석 준전문가(ADsP)</div>
+                    <div class="link-item">컴퓨터활용능력 2급</div>
+                    <div class="link-item">TOEIC 990</div>
+                    <div class="link-item">TORFL Level 3 (C2)</div>
+                    <div class="link-item">Portfolio | www.yenalee-portfolio.com</div>
+                    <div class="link-item">LinkedIn | linkedin.com/in/yenalee</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="footer-name">YENA LEE</div>
+        <div class="footer-sub">Data · Strategy · Content · Execution</div>
+    </div>
+
+</div>
+
+</body>
+</html>

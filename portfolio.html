@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio | Yena Lee</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#06080f;
+    color:#fff;
+    font-family:'Pretendard',sans-serif;
+    overflow-x:hidden;
+    position:relative;
+}
+
+/* Background */
+
+.background{
+    position:fixed;
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(6,8,15,.82),
+        rgba(6,8,15,.92)
+    ),
+    url('portfolio 2025(3).jpg')
+    center center / cover no-repeat;
+
+    z-index:-5;
+
+    filter:saturate(1.05);
+}
+
+/* Glow */
+
+.glow{
+    position:fixed;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:.35;
+    z-index:-4;
+}
+
+.glow.one{
+    width:520px;
+    height:520px;
+    background:#b88cff;
+    top:-140px;
+    left:-100px;
+}
+
+.glow.two{
+    width:480px;
+    height:480px;
+    background:#8cc8ff;
+    bottom:-120px;
+    right:-100px;
+}
+
+/* Wrapper */
+
+.wrapper{
+    width:100%;
+    max-width:1500px;
+    margin:0 auto;
+    padding:50px 50px 100px;
+}
+
+/* Header */
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:90px;
+}
+
+.logo{
+    font-size:2.4rem;
+    font-weight:300;
+    letter-spacing:-0.08em;
+}
+
+.logo span{
+    color:#ba9cff;
+}
+
+.home-btn{
+    text-decoration:none;
+
+    padding:14px 28px;
+
+    border-radius:999px;
+
+    color:#fff;
+
+    font-size:.95rem;
+    font-weight:600;
+
+    background:
+    linear-gradient(
+        90deg,
+        #b58dff,
+        #8dc8ff
+    );
+
+    box-shadow:
+    0 14px 34px rgba(173,144,255,.22);
+
+    transition:.35s ease;
+}
+
+.home-btn:hover{
+    transform:translateY(-5px);
+}
+
+/* Hero */
+
+.hero{
+    text-align:center;
+    margin-bottom:90px;
+}
+
+.hero-title{
+    font-family:'Montserrat',sans-serif;
+
+    font-size:6rem;
+    font-weight:800;
+
+    line-height:1;
+
+    letter-spacing:-0.08em;
+
+    margin-bottom:24px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #d3bbff,
+        #a9bfff,
+        #90d0ff
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero-sub{
+    font-size:1.15rem;
+
+    line-height:1.9;
+
+    color:rgba(255,255,255,.7);
+}
+
+/* Grid */
+
+.grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(360px,1fr));
+
+    gap:34px;
+
+    margin-bottom:80px;
+}
+
+/* Card */
+
+.card{
+    background:
+    linear-gradient(
+        180deg,
+        rgba(255,255,255,.06),
+        rgba(255,255,255,.03)
+    );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    backdrop-filter:blur(14px);
+
+    transition:.4s ease;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 24px 50px rgba(170,145,255,.16);
+}
+
+/* Media */
+
+.media-wrap{
+    position:relative;
+    width:100%;
+    height:260px;
+    overflow:hidden;
+}
+
+.media-wrap video,
+.media-wrap iframe,
+.media-wrap img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+/* Overlay */
+
+.overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.05),
+        rgba(0,0,0,.4)
+    );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.play-btn{
+    width:74px;
+    height:74px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(10px);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border:1px solid rgba(255,255,255,.2);
+}
+
+.play-btn svg{
+    width:28px;
+    height:28px;
+    fill:#fff;
+}
+
+/* Card Content */
+
+.card-content{
+    padding:28px;
+}
+
+.card-title{
+    font-size:1.4rem;
+    font-weight:700;
+
+    margin-bottom:14px;
+}
+
+.card-desc{
+    font-size:.98rem;
+
+    line-height:1.8;
+
+    color:rgba(255,255,255,.68);
+}
+
+/* CTA Section */
+
+.cta-section{
+    width:100%;
+
+    display:flex;
+    justify-content:center;
+    margin-top:20px;
+}
+
+.fx-btn{
+    text-decoration:none;
+
+    padding:22px 40px;
+
+    border-radius:999px;
+
+    font-size:1.05rem;
+    font-weight:700;
+
+    color:#fff;
+
+    background:
+    linear-gradient(
+        90deg,
+        #ba92ff,
+        #8ecbff
+    );
+
+    box-shadow:
+    0 20px 44px rgba(170,145,255,.24);
+
+    transition:.35s ease;
+}
+
+.fx-btn:hover{
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 28px 56px rgba(170,145,255,.34);
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+    .hero-title{
+        font-size:4rem;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:768px){
+
+    .wrapper{
+        padding:28px 20px 70px;
+    }
+
+    .topbar{
+        flex-direction:column;
+        gap:20px;
+        align-items:flex-start;
+    }
+
+    .hero-title{
+        font-size:3rem;
+    }
+
+    .hero-sub{
+        font-size:1rem;
+    }
+
+    .media-wrap{
+        height:220px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="glow one"></div>
+<div class="glow two"></div>
+
+<div class="wrapper">
+
+    <div class="topbar">
+
+        <div class="logo">
+            PORTFOLIO<span>.</span>
+        </div>
+
+        <a href="home.html" class="home-btn">
+            홈으로 돌아가기
+        </a>
+
+    </div>
+
+    <section class="hero">
+
+        <h1 class="hero-title">
+            Creative Works
+        </h1>
+
+        <p class="hero-sub">
+            데이터 기반 기획과 시각적 콘텐츠 제작 경험을 담은 프로젝트입니다.
+        </p>
+
+    </section>
+
+    <section class="grid">
+
+        <!-- AI BRAND FILM -->
+
+        <div class="card">
+
+            <div class="media-wrap">
+
+                <video controls poster="media/9.jpeg">
+                    <source src="media/AI BRAND FILM.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div class="card-content">
+
+                <div class="card-title">
+                    AI BRAND FILM
+                </div>
+
+                <div class="card-desc">
+                    브랜드 무드와 감성 중심의 AI 기반 영상 콘텐츠 제작 프로젝트.
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- AI 동화책 -->
+
+        <div class="card">
+
+            <div class="media-wrap">
+
+                <video controls poster="media/image2.png">
+                    <source src="media/AI 동화책.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div class="card-content">
+
+                <div class="card-title">
+                    AI 동화책
+                </div>
+
+                <div class="card-desc">
+                    캐릭터 일관성과 스토리텔링을 기반으로 제작한 AI 일러스트 동화 프로젝트.
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PDF PORTFOLIO -->
+
+        <div class="card">
+
+            <a href="media/PORTFOLIO.pdf" target="_blank" style="text-decoration:none;color:inherit;">
+
+                <div class="media-wrap">
+
+                    <img src="media/image.png" alt="PDF Thumbnail">
+
+                    <div class="overlay">
+
+                        <div class="play-btn">
+
+                            <svg viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="card-content">
+
+                    <div class="card-title">
+                        PORTFOLIO PDF
+                    </div>
+
+                    <div class="card-desc">
+                        프로젝트 결과물 및 기획·디자인 작업을 정리한 포트폴리오 문서.
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <section class="cta-section">
+
+        <a
+            href="https://www.youtube.com/watch?v=01c1N_1G3JA"
+            target="_blank"
+            class="fx-btn">
+
+            FX PORTFOLIO →
+
+        </a>
+
+    </section>
+
+</div>
+
+</body>
+</html>
